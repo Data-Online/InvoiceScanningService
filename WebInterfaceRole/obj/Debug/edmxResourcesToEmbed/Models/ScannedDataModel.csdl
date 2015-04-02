@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ScannedDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ScannedDataModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="ScannedDataModel.Customer" />
+    <EntitySet Name="Suppliers" EntityType="ScannedDataModel.Supplier" />
+    <EntitySet Name="Invoices" EntityType="ScannedDataModel.Invoice" />
+    <AssociationSet Name="CustomerInvoice" Association="ScannedDataModel.CustomerInvoice">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Invoice" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="SupplierInvoice" Association="ScannedDataModel.SupplierInvoice">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="Invoice" EntitySet="Invoices" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" />
+    <NavigationProperty Name="Invoices" Relationship="ScannedDataModel.CustomerInvoice" FromRole="Customer" ToRole="Invoice" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" />
+    <NavigationProperty Name="Invoices" Relationship="ScannedDataModel.SupplierInvoice" FromRole="Supplier" ToRole="Invoice" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceNumber" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="ScannedDataModel.CustomerInvoice" FromRole="Invoice" ToRole="Customer" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Supplier" Relationship="ScannedDataModel.SupplierInvoice" FromRole="Invoice" ToRole="Supplier" />
+    <Property Name="SupplierId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="CustomerInvoice">
+    <End Type="ScannedDataModel.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="ScannedDataModel.Invoice" Role="Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SupplierInvoice">
+    <End Type="ScannedDataModel.Supplier" Role="Supplier" Multiplicity="1" />
+    <End Type="ScannedDataModel.Invoice" Role="Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="SupplierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

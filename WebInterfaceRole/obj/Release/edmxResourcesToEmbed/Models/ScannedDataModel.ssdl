@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ScannedDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ScannedDataModelStoreContainer">
+    <EntitySet Name="Customers" EntityType="ScannedDataModel.Store.Customers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Suppliers" EntityType="ScannedDataModel.Store.Suppliers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Invoices" EntityType="ScannedDataModel.Store.Invoices" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="CustomerInvoice" Association="ScannedDataModel.Store.CustomerInvoice">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Invoice" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="SupplierInvoice" Association="ScannedDataModel.Store.SupplierInvoice">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="Invoice" EntitySet="Invoices" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Invoices">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceNumber" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="SupplierId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="CustomerInvoice">
+    <End Role="Customer" Type="ScannedDataModel.Store.Customers" Multiplicity="1" />
+    <End Role="Invoice" Type="ScannedDataModel.Store.Invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SupplierInvoice">
+    <End Role="Supplier" Type="ScannedDataModel.Store.Suppliers" Multiplicity="1" />
+    <End Role="Invoice" Type="ScannedDataModel.Store.Invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="SupplierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

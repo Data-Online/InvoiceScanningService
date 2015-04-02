@@ -1,0 +1,8 @@
+P:\Projects\Cloud_Development\GitHub\InvoiceScanningService\DocumentScanningLibrary\bin\Release\DocumentScanningLibrary.dll.config
+P:\Projects\Cloud_Development\GitHub\InvoiceScanningService\DocumentScanningLibrary\bin\Release\DocumentScanningLibrary.dll
+P:\Projects\Cloud_Development\GitHub\InvoiceScanningService\DocumentScanningLibrary\bin\Release\DocumentScanningLibrary.pdb
+P:\Projects\Cloud_Development\GitHub\InvoiceScanningService\DocumentScanningLibrary\bin\Release\FuzzyString.dll
+P:\Projects\Cloud_Development\GitHub\InvoiceScanningService\DocumentScanningLibrary\bin\Release\log4net.dll
+P:\Projects\Cloud_Development\GitHub\InvoiceScanningService\DocumentScanningLibrary\bin\Release\log4net.xml
+P:\Projects\Cloud_Development\GitHub\InvoiceScanningService\DocumentScanningLibrary\obj\Release\DocumentScanningLibrary.dll
+P:\Projects\Cloud_Development\GitHub\InvoiceScanningService\DocumentScanningLibrary\obj\Release\DocumentScanningLibrary.pdb

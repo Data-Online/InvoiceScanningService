@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CimscoScanning" Class="ScanningDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DEVELOP02\SQLSERVER2012;Initial Catalog=CimscoScanning;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="DocumentScanningLibrary.Properties.Settings" SettingsPropertyName="CimscoScanningConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ScannedRecords" Member="ScannedRecords">
+    <Type Name="ScannedRecord">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InvoiceNumber" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountNumber" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ICPnumber" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="LCfixedUnits" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="LCfixedCostPerUnit" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="LCfixedCharge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="LCvariableUnits" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="LCvariableCostPerUnit" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="LCvariableCharge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="LCmaxDemandUnits" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="LCmaxDemandCostPerUnit" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="LCmaxDemandCharge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="LCassessedCapacityUnits" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="LCassessedCapacityPerUnit" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="LCassessedCapacityCharge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday00_04_Units" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday04_08_Units" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday08_12_Units" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday12_16_Units" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday16_20_Units" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday20_24_Units" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend00_04_Units" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend04_08_Units" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend08_12_Units" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend12_16_Units" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend16_20_Units" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend20_24_Units" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday00_04_Losses" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday04_08_Losses" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday08_12_Losses" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday12_16_Losses" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday16_20_Losses" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday20_24_Losses" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend00_04_Losses" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend04_08_Losses" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend08_12_Losses" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend12_16_Losses" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend16_20_Losses" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend20_24_Losses" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday00_04_CostPerUnit" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="Weekday04_08_CostPerUnit" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="Weekday08_12_CostPerUnit" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="Weekday12_16_CostPerUnit" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="Weekday16_20_CostPerUnit" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="Weekday20_24_CostPerUnit" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="Weekend00_04_CostPerUnit" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="Weekend04_08_CostPerUnit" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="Weekend08_12_CostPerUnit" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="Weekend12_16_CostPerUnit" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="Weekend16_20_CostPerUnit" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="Weekend20_24_CostPerUnit" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="FromDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ToDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FailedMatches" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ScannedFileName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ScanDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FailedValidations" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Weekday00_04_Charge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday04_08_Charge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday08_12_Charge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday12_16_Charge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday16_20_Charge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekday20_24_Charge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend00_04_Charge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend04_08_Charge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend08_12_Charge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend12_16_Charge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend16_20_Charge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Weekend20_24_Charge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="AdminCharge_Units" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="AdminCharge_Rate" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="AdminCharge_Charge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="ECLevies_Units" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="ECLevies_Rate" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="ECLevies_Charge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TotalCharge" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="FailedValidationRecords" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

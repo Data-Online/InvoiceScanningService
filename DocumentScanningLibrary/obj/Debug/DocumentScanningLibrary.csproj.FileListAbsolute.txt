@@ -1,0 +1,4 @@
+P:\Projects\Cloud_Development\GitHub\InvoiceScanningService\DocumentScanningLibrary\bin\Debug\DocumentScanningLibrary.dll
+P:\Projects\Cloud_Development\GitHub\InvoiceScanningService\DocumentScanningLibrary\bin\Debug\DocumentScanningLibrary.pdb
+P:\Projects\Cloud_Development\GitHub\InvoiceScanningService\DocumentScanningLibrary\obj\Debug\DocumentScanningLibrary.dll
+P:\Projects\Cloud_Development\GitHub\InvoiceScanningService\DocumentScanningLibrary\obj\Debug\DocumentScanningLibrary.pdb
